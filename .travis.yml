@@ -18,7 +18,7 @@ before_install:
   - docker build -t new4303/react-test -f ./client/Dockerfile.dev ./client
 
   script:
-  - docker run -e CI=true new4303/react-test npm run test
+  - docker run new4303/react-test npm test -- --coverage
 
   deploy:
     provider: script
