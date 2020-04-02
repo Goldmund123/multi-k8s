@@ -18,10 +18,10 @@ before_install:
   - docker build -t new4303/react-test -f ./client/Dockerfile.dev ./client
 
   script:
-  - docker run -e CI=true new4303/docker-react npm run test
+  - docker run -e CI=true new4303/react-test npm run test
 
   deploy:
-    provider: script #I will deploy by using my own script
+    provider: script
     script: bash ./deploy.sh
     on:
       brach: master
