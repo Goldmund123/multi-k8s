@@ -1,3 +1,4 @@
+  
 docker build -t new4303/multi-client:latest -t new4303/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t new4303/multi-server:latest -t new4303/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t new4303/multi-worker:latest -t new4303/multi-worker:$SHA -f ./worker/Dockerfile ./worker
