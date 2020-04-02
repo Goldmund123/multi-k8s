@@ -17,11 +17,11 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t new4303/react-test -f ./client/Dockerfile.dev ./client
 
-  script:
+script:
   - docker run new4303/react-test npm test -- --coverage
 
-  deploy:
-    provider: script
-    script: bash ./deploy.sh
-    on:
-      brach: master
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
